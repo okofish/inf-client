@@ -64,6 +64,8 @@ small .has-tip:hover {
     bottom: 5px;
 }
 
+/* Terminal messages and history */
+
 #terminal-history {
     height: 90%;
     display: flex;
@@ -83,4 +85,10 @@ small .has-tip:hover {
 
 .bold-message {
     font-weight: bold;
+}
+
+/* Other stuff */
+
+.footer {
+    text-align: center;
 }
