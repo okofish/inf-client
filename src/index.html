@@ -1,0 +1,87 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Nonfiction</title>
+    <link rel="stylesheet" href="css/vendor/foundation.css">
+    <link rel="stylesheet" href="css/app.css">
+  </head>
+  <body>
+    <div class="row" id="start-screen">
+      <div class="large-12 columns">
+        <h1>Interactive Nonfiction</h1>
+        <p><b>Interactive Nonfiction</b> is an <a href="https://en.wikipedia.org/wiki/Interactive_fiction">interactive fiction</a>-style game that lets you explore the world with Google's <a href="https://developers.google.com/maps/documentation/javascript/streetview">Street View Service</a> and <a href="https://cloud.google.com/vision/">Cloud Vision API</a>.</p>
+        <fieldset class="fieldset">
+          <legend>Get started</legend>
+          <div data-abide-error class="alert callout" style="display: none;" id="nopano-alert">
+              <p><i class="fi-alert"></i> The selected location has no Street View imagery available. Try selecting another location.</p>
+            </div>
+          <label>Location
+            <select id="location-presets">
+              <option value="eiffel" default>Eiffel Tower</option>
+              <option value="tonic">Tonic Design Co.</option>
+              <option value="indonesia">Indonesian Rainforest</option>
+              <option disabled>────────</option>
+              <option value="custom">Custom Location</option>
+              <option value="surprise">Surprise me!</option>
+            </select>
+          </label>
+          <div id="location-picker">
+            <label>Location
+              <input type="text" id="location-address"/>
+            </label>
+            <div id="location-map-container"></div>
+            <div class="row">
+                <div class="medium-6 columns">
+                  <label>Latitude
+                    <input type="text" id="location-lat"/>
+                  </label>
+                </div>
+                <div class="medium-6 columns">
+                  <label>Longitude
+                    <input type="text" id="location-lon"/>
+                  </label>
+                </div>
+              </div>
+          </div>
+          <label>Mode <small><span data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover="false" tabindex="2" title="In normal mode, both the Street View image and the game terminal are shown. In blind mode, only the game terminal is show.">what's this?</span></small>
+            <select id="mode-select">
+              <option value="normal" default>Normal</option>
+              <option value="blind">Blind</option>
+              <option value="debug">Debug</option>
+            </select>
+          </label>
+          <label>Service</small>
+            <select id="service-select">
+              <option value="clarifai" default>Clarifai</option>
+              <option value="google" default>Google Vision API</option>
+              <option value="watson">IBM Watson Visual Recognition</option>
+            </select>
+          </label>
+          <a class="expanded button" id="start-button" href="#">Enter the Matrix</a>
+        </fieldset>
+      </div>
+    </div>
+    
+    <div id="game-screen">
+      <div id="game-sv-container"></div>
+      <div id="game-terminal">
+        <div id="terminal-history"></div>
+        <div id="terminal-input-container">
+          <span id="terminal-prompt">&gt;</span><input type="text" id="terminal-input" autofocus/>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/what-input.js"></script>
+    <script src="js/vendor/foundation.js"></script>
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTImmbPgsuJXh01xGTw8FpqCUAJTLT7AU&libraries=places"></script>
+    <script src="js/vendor/locationpicker.jquery.js"></script>
+    
+    <script src="js/app.js"></script>
+  </body>
+</html>
