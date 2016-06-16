@@ -44,11 +44,11 @@ function getClosestPano(location, cb) {
     preference: google.maps.StreetViewPreference.NEAREST,
     source: google.maps.StreetViewSource.OUTDOOR
   }, function(data, status) {
-    if (status === 'ZERO_RESULTS') {
+    if (status === google.maps.StreetViewStatus.ZERO_RESULTS) {
       $('#nopano-alert').show();
     } else {
       $('#nopano-alert').hide();
-      if (status === 'OK') {
+      if (status === google.maps.StreetViewStatus.OK) {
         cb(data.location.latLng);
       } else {
         logMessage('Whoops! We had some trouble loading that Street View location. Try reloading the page and starting the game again.');
