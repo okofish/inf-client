@@ -47,6 +47,9 @@ var Game = function(opts) {
         }
       });
     }
+    
+    // zoom out
+    self.pano.setZoom(0);
   })
 };
 
