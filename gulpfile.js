@@ -4,7 +4,6 @@ var gulp = require('gulp'),
   copy = require('gulp-copy'),
   htmlPrettify = require('gulp-prettify'),
   cssPrettify = require('gulp-cssbeautify'),
-  ghPages = require('gulp-gh-pages'),
   browserSync = require('browser-sync'),
   reload = browserSync.reload;
 
@@ -48,9 +47,4 @@ gulp.task('watch', function() {
   gulp.watch(['*.html', 'css/**/*.css', 'js/**/*.js'], {
     cwd: 'src'
   }, ['default'])
-});
-
-gulp.task('deploy', function() {
-  return gulp.src('./build/**/*')
-    .pipe(ghPages());
 });
