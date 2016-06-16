@@ -32,7 +32,7 @@ gulp.task('css', function() {
 });
 
 gulp.task('copy', function() {
-  gulp.src(['./src/js/vendor/*', './src/css/vendor/*'])
+  gulp.src(['./src/js/vendor/*', './src/css/vendor/*', './src/CNAME'])
     .pipe(copy('./build/', {
       prefix: 1
     }))
