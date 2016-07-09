@@ -84,5 +84,6 @@ $('#location-presets').change(function() {
 
 // Listen for the start button to be clicked
 $('#start-button').click(function() {
+  removePicker();
   showGame();
 });
