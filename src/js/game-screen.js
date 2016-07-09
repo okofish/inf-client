@@ -13,6 +13,8 @@ function showGame(location, mode) {
 
     if (showSV) {
       $('#game-terminal').addClass('squished');
+    } else {
+      $('#game-terminal').removeClass('squished');
     }
 
     game = new Game({
