@@ -15,8 +15,12 @@ small .has-tip:hover {
 
 /* Location selector map */
 #location-map {
-    width: 500px;
     height: 400px;
+}
+
+/* Location selector container */
+#location-map-container {
+    padding-bottom: 7px;
 }
 
 /* Street View window */
