@@ -17,6 +17,11 @@ small .has-tip:hover {
   height: 400px;
 }
 
+/* Location selector container */
+#location-map-container {
+  padding-bottom: 7px;
+}
+
 /* Street View window */
 #game-sv-window {
   width: 100%;
